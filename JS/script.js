@@ -36,3 +36,32 @@ const answers = [];
 const user = prompt("What is ur name?");
 alert(`Hi, ${user}!`);
 //INTERPOLATION method
+
+const num = 50;
+(num == 50) ? console.log("Yeah") : console.log("Nope");
+//ternary opearator ?
+switch(num) {
+    case 49:
+        console.log("False");
+        break;
+    case 100:
+        console.log("False");
+        break;
+    case 50:
+        console.log("True");
+        break;
+    default:
+        console.log("Not Today, sorry!");
+        break;
+}
+// 3 THYPES OF FUNCTIONS
+//Function DECLARATION - is visible everywhere
+function calc(a,b){
+    return a + b;
+}
+//Function EXPRESSION - is visibile rigorously after announcement
+const calculator = function(a,b){
+    return a * b;
+};
+//Function ARROW - is short in a length
+let calcul = (a,b) => a/b;
