@@ -76,3 +76,14 @@ str.indexOf("l");
 str.slice(2,4);
 str = "Hello world!";
 console.log(str.substr(1,2));
+//callback functions
+function learnJS(lang, callback){
+    console.log(`Я учу ${lang}`);
+    callback();
+}
+
+function done(){
+    console.log("Я прошел этот урок!");
+}
+
+learnJS("Javascript", done);
