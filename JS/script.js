@@ -65,3 +65,14 @@ const calculator = function(a,b){
 };
 //Function ARROW - is short in a length
 let calcul = (a,b) => a/b;
+//METHODS in JS
+let str = "Hello";
+console.log(str.toUpperCase());
+
+//Command to check properties of objects is .dir()
+//.indexOf searches the first appearence of determined letter in text
+str.indexOf("l");
+//.slice divide a word into determined pieces ~ .substring(which> dont support negative values)
+str.slice(2,4);
+str = "Hello world!";
+console.log(str.substr(1,2));
