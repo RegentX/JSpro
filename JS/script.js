@@ -87,3 +87,33 @@ function done(){
 }
 
 learnJS("Javascript", done);
+
+const options = {
+    name: "test",
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: "black",
+        bg: "red"
+    },
+    makeTest: function(){
+        console.log("Testing");
+    }
+};
+//first working method inner object
+options.makeTest();
+
+//destructurization operator
+const {border, bg} = options.colors;
+
+for (let key in options) {
+    for (let i in options[key]){
+        if (typeof(options[key]) == 'object'){
+            console.log(`Свойство ${i} имеет свое значение ${options[key][i]}`);
+        }else{
+            console.log(`Свойство ${key} имеет свое значение ${options[key]}`);
+        }
+    }
+}
+//counter of amount of properties og Object
+console.log(Object.keys(options).length);
