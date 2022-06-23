@@ -117,3 +117,34 @@ for (let key in options) {
 }
 //counter of amount of properties og Object
 console.log(Object.keys(options).length);
+
+//arrays
+let arr = [2,4,5,6,67,8];
+arr.push(8);
+arr.pop();
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let item of arr){
+//     console.log(item);
+// }
+//ctrl + / для комментария не несколько строк кода!!!
+
+// arr.forEach(function(elem, i, arr ){
+//     console.log(`${i} : ${elem} : in ${arr}`)
+// });
+
+const str2 = prompt("", "");
+const products = str2.split(", ");
+console.log(products);
+console.log(products.join("; "));
+
+let arr2 = [2,4,5,6,7,9];
+arr2.sort();
+arr2.sort(compareNum);
+
+function compareNum(a,b){
+    return a - b;
+}
