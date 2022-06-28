@@ -141,10 +141,13 @@ const products = str2.split(", ");
 console.log(products);
 console.log(products.join("; "));
 
-let arr2 = [2,4,5,6,7,9];
+let arr2 = [2,6,18,6,7,9];
 arr2.sort();
+console.log(arr2);
 arr2.sort(compareNum);
+console.log(arr2);
 
 function compareNum(a,b){
     return a - b;
 }
+
