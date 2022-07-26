@@ -82,72 +82,170 @@ function learnJS(lang, callback){
     callback();
 }
 
-function done(){
-    console.log("Я прошел этот урок!");
+// function done(){
+//     console.log("Я прошел этот урок!");
+// }
+
+// learnJS("Javascript", done);
+
+// const options = {
+//     name: "test",
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: "black",
+//         bg: "red"
+//     },
+//     makeTest: function(){
+//         console.log("Testing");
+//     }
+// };
+// //first working method inner object
+// options.makeTest();
+
+// //destructurization operator
+// const {border, bg} = options.colors;
+
+// for (let key in options) {
+//     for (let i in options[key]){
+//         if (typeof(options[key]) == 'object'){
+//             console.log(`Свойство ${i} имеет свое значение ${options[key][i]}`);
+//         }else{
+//             console.log(`Свойство ${key} имеет свое значение ${options[key]}`);
+//         }
+//     }
+// }
+// //counter of amount of properties og Object
+// console.log(Object.keys(options).length);
+
+// //arrays
+// let arr = [2,4,5,6,67,8];
+// arr.push(8);
+// arr.pop();
+
+// // for (let i = 0; i < arr.length; i++) {
+// //     console.log(arr[i]);
+// // }
+
+// // for (let item of arr){
+// //     console.log(item);
+// // }
+// //ctrl + / для комментария не несколько строк кода!!!
+
+// // arr.forEach(function(elem, i, arr ){
+// //     console.log(`${i} : ${elem} : in ${arr}`)
+// // });
+
+// const str2 = prompt("", "");
+// const products = str2.split(", ");
+// console.log(products);
+// console.log(products.join("; "));
+
+// let arr2 = [2,6,18,6,7,9];
+// arr2.sort();
+// console.log(arr2);
+// arr2.sort(compareNum);
+// console.log(arr2);
+
+// function compareNum(a,b){
+//     return a - b;
+// }
+
+// let a = 5,
+//     b = 1;
+
+// b = b + 5;
+// console.log(a);
+// console.log(b);
+
+const obj = {
+    l: 5,
+    m: 1
+};
+
+// const copy = obj; //link to the existing obj
+
+// copy.a = 10;
+
+function copy2(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
 }
 
-learnJS("Javascript", done);
+// console.log(obj);
+// console.log(copy);
 
-const options = {
-    name: "test",
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: "black",
-        bg: "red"
-    },
-    makeTest: function(){
-        console.log("Testing");
+const numbers = {
+    a: 5,
+    b: 10,
+    c: {
+        x: 9,
+        y: "&"
     }
 };
-//first working method inner object
-options.makeTest();
 
-//destructurization operator
-const {border, bg} = options.colors;
+const newNumbers = copy2(numbers);
 
-for (let key in options) {
-    for (let i in options[key]){
-        if (typeof(options[key]) == 'object'){
-            console.log(`Свойство ${i} имеет свое значение ${options[key][i]}`);
-        }else{
-            console.log(`Свойство ${key} имеет свое значение ${options[key]}`);
-        }
-    }
+newNumbers.a = 88;
+newNumbers.c.x = 300;
+
+console.log(newNumbers);
+console.log(numbers);
+//we've made a superficial copy of obj, not a profound copy
+
+console.log(Object.assign(numbers, obj));
+//command of conjunction
+
+// const lala = {
+//     l: 7,
+//     m: 9
+// };
+
+// const clone = Object.assign({}, lala);
+
+// clone.l = 100;
+
+// console.log(clone);
+// console.log(lala);
+
+const lala2 = [1, 2, 3];
+
+const clone2 = lala2.slice();
+
+clone2[1] = "djedejdiej";
+
+console.log(clone2);
+console.log(lala2);
+
+let countries = ["germany", "canada", "portugal"],
+    cities = ["moscow", "saint-petersburg", "london"],
+    world = [...countries, ...cities, "EAEU", "EU"];
+//spread operator unite all the arrays in one
+    console.log(world);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
 }
-//counter of amount of properties og Object
-console.log(Object.keys(options).length);
 
-//arrays
-let arr = [2,4,5,6,67,8];
-arr.push(8);
-arr.pop();
+const num2 = [1, 4, 7];
+log(...num2);
 
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
+//spread operator is using like an operator of separation
 
-// for (let item of arr){
-//     console.log(item);
-// }
-//ctrl + / для комментария не несколько строк кода!!!
+const list = {
+    a: "byak",
+    b: "abyabyabyab"
+};
+//easy superficial copy of object
+const newList = {...list};
 
-// arr.forEach(function(elem, i, arr ){
-//     console.log(`${i} : ${elem} : in ${arr}`)
-// });
-
-const str2 = prompt("", "");
-const products = str2.split(", ");
-console.log(products);
-console.log(products.join("; "));
-
-let arr2 = [2,6,18,6,7,9];
-arr2.sort();
-console.log(arr2);
-arr2.sort(compareNum);
-console.log(arr2);
-
-function compareNum(a,b){
-    return a - b;
-}
+console.log(newList);
 
