@@ -249,3 +249,25 @@ const newList = {...list};
 
 console.log(newList);
 
+//genesis of objects (old version)
+const soldier = {
+    health: 100,
+    armour: 100,
+    sayHello: function() {
+        console.log("Hello, brat");
+    }
+};
+
+const vanya = {
+    health: 99
+};
+
+vanya.__proto__ = soldier;
+
+console.log(vanya);
+console.log(vanya.armour);
+vanya.sayHello();
+// new way to build a genesis of object
+Object.setPrototypeOf(vanya, soldier);
+
+const sergey = Object.create(soldier);
