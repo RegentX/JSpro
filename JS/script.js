@@ -249,7 +249,7 @@ const newList = {...list};
 
 console.log(newList);
 
-//genesis of objects (old version)
+//heritage of objects (old version)
 const soldier = {
     health: 100,
     armour: 100,
@@ -267,7 +267,59 @@ vanya.__proto__ = soldier;
 console.log(vanya);
 console.log(vanya.armour);
 vanya.sayHello();
-// new way to build a genesis of object
+// new way to inherit of object
 Object.setPrototypeOf(vanya, soldier);
 
 const sergey = Object.create(soldier);
+
+//dynamic retyping
+console.log(typeof(String(null)));
+console.log(typeof(Number("1")));
+console.log(typeof(Boolean("true")));
+
+console.log(typeof("uuu" + null));
+console.log(typeof(+"4"));
+console.log(typeof(!!"uhuahuhu"));
+
+console.log(typeof(parseInt("15px", 10)));
+
+//tasks from interview
+
+let x = 5; alert( x++ );
+// 5
+
+console.log([ ] + false - null + true);
+//NaN
+
+let y2 = 1; let x2 = y2 = 2; alert(x);
+//2
+
+console.log([ ] + 1 + 2);
+//12 string
+
+alert( "1"[0] );
+//1
+
+console.log(2 && 1 && null && 0 && undefined);
+//&& breaks on false 
+//|| breaks on truth
+//null
+
+console.log(!!( 1 && 2 ) === (1 && 2));
+//boolean!=number
+
+alert( null || 2 && 3 || 4 );
+//4
+
+const a = [1, 2, 3]; const b = [1, 2, 3]; 
+console.log(a === b);
+// false, two different arrays
+
+alert( +"Infinity" );
+//value Infinity, type of Number
+
+console.log("Ёжик" > "яблоко");
+//features of Unicode
+
+console.log(0 || "" || 2 || undefined || true || falsе);
+//2
